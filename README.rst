@@ -1,3 +1,3 @@
-# dvc-box
+dvc-box
 
 box plugin for dvc
