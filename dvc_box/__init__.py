@@ -52,10 +52,6 @@ class BoxFileSystem(FileSystem):  # pylint:disable=abstract-method
             "root_id": '290432082372',
         }
 
-    @classmethod
-    def _strip_protocol(cls, path):
-        return '/'
-
     def unstrip_protocol(self, path):
         return f"box://{path}"
 
