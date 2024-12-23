@@ -34,7 +34,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "dvc-box[tests]",
-    "mypy==1.8.0",
+    "mypy==1.14.0",
 ]
 tests = [
     "dvc[testing]",
