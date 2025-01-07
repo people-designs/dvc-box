@@ -35,7 +35,7 @@ class TestImport(_TestImport):
     Once you've implemented/verified that imports work for Box,
     remove the @pytest.mark.xfail to see if it passes.
     """
-    pass
+
 
 
 @pytest.mark.xfail

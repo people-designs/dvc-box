@@ -11,10 +11,12 @@ from dvc_objects.fs.errors import ConfigError
 
 logger = logging.getLogger(__name__)
 
+
 class BoxFileSystem(FileSystem):  # pylint:disable=abstract-method
     """
     Thin wrapper around boxfs.BoxFileSystem for use as a DVC remote.
     """
+
     protocol = "box"
     PARAM_CHECKSUM = "checksum"
     # DVC uses REQUIRES to check for required PyPI dependencies.
@@ -74,7 +76,7 @@ class BoxFileSystem(FileSystem):  # pylint:disable=abstract-method
 
         # root_id or root_path logic:
         # If the user put something like "box://0/some/path", we might treat "0" as root
-        # or if it’s a custom folder ID, we store it in _settings as "root_id".
+        # or if it's a custom folder ID, we store it in _settings as "root_id".
         # Then use self._path for the subfolder path inside that root.
         if self._host:  # e.g. "12345"
             # We treat host as a folder ID
@@ -124,15 +126,16 @@ class BoxFileSystem(FileSystem):  # pylint:disable=abstract-method
         """
         from boxfs import BoxFileSystem
 
-        # We might want to refine how we compute root_id vs root_path based on _host, _path, etc.
+        # We might want to refine how we compute root_id vs root_path based on
+        # _host, _path, etc.
         # For example:
-        #   self._settings["root_id"] = self._host   (if you interpret that as the folder ID)
+        #   self._settings["root_id"] = self._host   (if you interpret that as
+        # the folder ID)
         #   self._settings["root_path"] = self._path (the subfolder)
         #
         # (The example in __init__ does this, but you can adjust as needed.)
 
-        fs = BoxFileSystem(**self._settings)
-        return fs
+        return BoxFileSystem(**self._settings)
 
     def upload_fobj(self, fobj, to_info, **kwargs):
         """

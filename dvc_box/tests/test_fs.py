@@ -1,12 +1,14 @@
 from typing import ClassVar
-from dvc_box import BoxFileSystem
 
 import pytest
+
+from dvc_box import BoxFileSystem
 
 # If your plugin defines a custom error, import it:
 # from dvc_box.errors import BoxAuthError
 #
-# Or, if you raise a generic ConfigError or BoxAPIException, import whichever is appropriate:
+# Or, if you raise a generic ConfigError or BoxAPIException, import whichever
+# is appropriate:
 from dvc_objects.fs.errors import ConfigError
 
 # Import your plugin's FileSystem class (the equivalent of GDriveFileSystem).
