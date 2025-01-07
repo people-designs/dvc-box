@@ -1,4 +1,5 @@
 from typing import ClassVar
+from dvc_box import BoxFileSystem
 
 import pytest
 
@@ -33,7 +34,7 @@ class TestRemoteBox:
         # assert fs.url == self.CONFIG["url"]
 
         # Since we don't know your exact class name, here's a placeholder:
-        fs = FakeBoxFileSystem(**self.CONFIG)  # Replace with your actual class
+        fs = BoxFileSystem(**self.CONFIG)  # Replace with your actual class
         assert fs.url == self.CONFIG["url"]
 
     def test_box_auth_errors(self, monkeypatch):
@@ -46,14 +47,14 @@ class TestRemoteBox:
 
         # 1) Set env var to an invalid JSON that triggers an auth error
         monkeypatch.setenv(env_var_name, INVALID_BOX_CREDS_JSON)
-        fs = FakeBoxFileSystem(**self.CONFIG)  # Replace with your actual class
+        fs = BoxFileSystem(**self.CONFIG)  # Replace with your actual class
         with pytest.raises(ConfigError):  # or BoxAuthError, if you define it
             # Access fs.fs or some property that forces auth logic
             _ = fs.fs
 
         # 2) Set env var to empty JSON, also triggers an auth error
         monkeypatch.setenv(env_var_name, EMPTY_CREDS_JSON)
-        fs = FakeBoxFileSystem(**self.CONFIG)
+        fs = BoxFileSystem(**self.CONFIG)
         with pytest.raises(ConfigError):  # or BoxAuthError
             _ = fs.fs
 
@@ -65,7 +66,7 @@ class TestRemoteBox:
         env_var_name = "BOX_CREDENTIALS_DATA"
         monkeypatch.setenv(env_var_name, "some_service_account_token")
         # fs = BoxDVCFileSystem(box_use_service_account=True, **self.CONFIG)
-        fs = FakeBoxFileSystem(box_use_service_account=True, **self.CONFIG)
+        fs = BoxFileSystem(box_use_service_account=True, **self.CONFIG)
         # If just creating doesn't throw an error, that might be enough,
         # or you can do further checks. E.g.:
         assert fs._settings.get("use_service_account") is True
