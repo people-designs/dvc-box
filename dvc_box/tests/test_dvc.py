@@ -29,20 +29,20 @@ def workspace(make_workspace):
     return make_workspace(name="workspace", typ="box")
 
 
-@pytest.mark.xfail
-class TestImport(_TestImport):
-    """
-    Once you've implemented/verified that imports work for Box,
-    remove the @pytest.mark.xfail to see if it passes.
-    """
+# @pytest.mark.xfail
+# class TestImport(_TestImport):
+#     """
+#     Once you've implemented/verified that imports work for Box,
+#     remove the @pytest.mark.xfail to see if it passes.
+#     """
 
 
 
-@pytest.mark.xfail
-class TestLsUrl(_TestLsUrl):
-    pass
+# @pytest.mark.xfail
+# class TestLsUrl(_TestLsUrl):
+#     pass
 
 
-@pytest.mark.xfail
-class TestGetUrl(_TestGetUrl):
-    pass
+# @pytest.mark.xfail
+# class TestGetUrl(_TestGetUrl):
+#     pass

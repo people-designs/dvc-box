@@ -129,7 +129,7 @@ select = [
     "RUF022",
     "RUF023",
     "RUF024",
-    "RUF025",
+    "C420",
     "RUF026",
 ]
 preview = true
