@@ -9,10 +9,7 @@ write_to = "dvc_box/_dvc_box_version.py"
 name = "dvc-box"
 description = "box plugin for dvc"
 readme = "README.rst"
-keywords = [
-    "dvc",
-    "box",
-]
+keywords = ["dvc", "box"]
 license = { text = "Apache License 2.0" }
 maintainers = [{ name = "Iterative", email = "support@dvc.org" }]
 authors = [{ name = "Iterative", email = "support@dvc.org" }]
@@ -27,15 +24,10 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 dynamic = ["version"]
-dependencies = [
-    "dvc",
-]
+dependencies = ["dvc"]
 
 [project.optional-dependencies]
-dev = [
-    "dvc-box[tests]",
-    "mypy==1.8.0",
-]
+dev = ["dvc-box[tests]", "mypy==1.8.0"]
 tests = [
     "dvc[testing]",
     # Test requirements
@@ -51,9 +43,7 @@ Source = "https://github.com/iterative/dvc-box"
 [tool.pytest.ini_options]
 log_level = "debug"
 addopts = "-ra"
-markers = [
-    "needs_internet: Might need network access for the tests",
-]
+markers = ["needs_internet: Might need network access for the tests"]
 
 [tool.mypy]
 # Error output
@@ -77,14 +67,70 @@ show-fixes = true
 
 [tool.ruff.lint]
 ignore = [
-    "N818", "S101", "ISC001", "PT004", "PT007", "RET502", "RET503", "SIM105", "SIM108", "SIM117",
-    "TRY003", "TRY300", "PLR2004", "PLW2901", "LOG007",
+    "N818",
+    "S101",
+    "ISC001",
+    "PT004",
+    "PT007",
+    "RET502",
+    "RET503",
+    "SIM105",
+    "SIM108",
+    "SIM117",
+    "TRY003",
+    "TRY300",
+    "PLR2004",
+    "PLW2901",
+    "LOG007",
 ]
 select = [
-    "F", "E", "W", "C90", "I", "N", "UP", "YTT", "ASYNC", "S", "BLE", "B", "A", "C4", "T10",
-    "EXE", "ISC", "ICN", "G", "INP", "PIE", "T20", "PYI", "PT", "Q", "RSE", "RET",
-    "SLOT", "SIM", "TID", "TCH", "ARG", "PGH", "PLC", "PLE", "PLR", "PLW", "TRY",
-    "FLY", "PERF101", "LOG", "RUF", "RUF022", "RUF023", "RUF024", "RUF025", "RUF026",
+    "F",
+    "E",
+    "W",
+    "C90",
+    "I",
+    "N",
+    "UP",
+    "YTT",
+    "ASYNC",
+    "S",
+    "BLE",
+    "B",
+    "A",
+    "C4",
+    "T10",
+    "EXE",
+    "ISC",
+    "ICN",
+    "G",
+    "INP",
+    "PIE",
+    "T20",
+    "PYI",
+    "PT",
+    "Q",
+    "RSE",
+    "RET",
+    "SLOT",
+    "SIM",
+    "TID",
+    "TCH",
+    "ARG",
+    "PGH",
+    "PLC",
+    "PLE",
+    "PLR",
+    "PLW",
+    "TRY",
+    "FLY",
+    "PERF101",
+    "LOG",
+    "RUF",
+    "RUF022",
+    "RUF023",
+    "RUF024",
+    "RUF025",
+    "RUF026",
 ]
 preview = true
 explicit-preview-rules = true
