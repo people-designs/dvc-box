@@ -6,9 +6,9 @@ from dvc.testing.api_tests import (  # noqa: F401
 from dvc.testing.remote_tests import (  # noqa: F401
     TestRemote,
 )
-from dvc.testing.workspace_tests import TestGetUrl as _TestGetUrl
-from dvc.testing.workspace_tests import TestImport as _TestImport
-from dvc.testing.workspace_tests import TestLsUrl as _TestLsUrl
+# from dvc.testing.workspace_tests import TestGetUrl as _TestGetUrl
+# from dvc.testing.workspace_tests import TestImport as _TestImport
+# from dvc.testing.workspace_tests import TestLsUrl as _TestLsUrl
 
 
 @pytest.fixture
