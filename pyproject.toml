@@ -27,7 +27,7 @@ dynamic = ["version"]
 dependencies = ["dvc"]
 
 [project.optional-dependencies]
-dev = ["dvc-box[tests]", "mypy==1.8.0"]
+dev = ["dvc-box[tests]", "mypy==1.14.1"]
 tests = [
     "dvc[testing]",
     # Test requirements
